@@ -63,9 +63,6 @@ sudo apt install -y make cmake build-essential
 #I don't use emacs. But to please Stallman and the church of Emacs, I'm including this here.
 sudo apt install -y emacs
 
-#this is for developing gtk apps. You know if you need this or not.
-sudo apt install -y libgtk-3-dev
-
 #MySQL and utilities. I used to use mysql in my Rails apps.
 sudo apt install -y mysql-workbench libmysqlclient-dev mysql-server mysql-utilities libaio1 #libaio1 is a needed library for mysql.
 
