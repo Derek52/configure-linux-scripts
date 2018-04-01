@@ -32,6 +32,7 @@ sudo apt install -y \
 	freecad \
 	kicad \
 	audacity \
+	libreoffice libreoffice-gtk \
 	vlc \
 	tilda \
 	terminology
