@@ -1,7 +1,32 @@
 #!/bin/bash
 
-#this script installs a bunch of software. it handles anything that takes sudo rights.
-sudo ./configure-linux.sh
+if [ -z "$1" ]
+then
+	echo "Help info"
+
+elif [ "${1,,}" == "ubuntu" ] || [ "${1,,}" == "debian" ]
+then
+	./ubuntu/configure-linux.sh
+
+elif [ "${1,,}" == "fedora" ]
+then
+	echo "You are running Fedora"
+
+elif [ "${1,,}" == "arch" ]
+then
+	echo "You are running Arch"
+
+elif [ "${1,,}" == "opensuse" ]
+then
+	echo "You are running openSuse"
+
+elif [ "${1,,}" == "solus" ]
+then
+	echo "You are running Solus"
+
+else
+	echo -e "You misspelled your system, or it is not supported.\nIf you are using something Ubuntu based, like Linux Mint, type \"Ubuntu\""
+fi
 
 #this script creates some directories, and does a couple other things that don't take sudo rights.
 ./customize-home.sh
