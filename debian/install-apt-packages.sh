@@ -4,7 +4,7 @@
 #I don't use all of this software, but I use a lot of it, and I wanted to cover as many bases as possible.
 #They are broken into categories for easy readability. This entire script could have been a long one-liner.
 
-#I've tested this script on Pop_OS!, elementaryOS, and Linux Mint, so it will probably work on anything Ubuntu based. Some package names may be different though. I had to modify a few package names for this to work on Debian
+#Debian uses the apt package manager, like Ubuntu and it's dirivatives, but some package names were different, so I just duplicated the ubuntu script and changed a few lines.
 
 #install some programming languages. I have some of these for playing around with. Others are simply here for compiling or running random bits of software I sometimes use.
 #None of these take up a bunch of space, but you can delete any you know you'll never need.
@@ -23,8 +23,7 @@ sudo apt install -y \
 #the fun stuff. A list of graphic software, delete the line for any software you don't need or want. I don't use all of these things, but I tried to cover as many bases as I could.
 sudo apt install -y \
 	docky \
-	firefox \
-	chromium-browser \
+	chromiumr \
 	deluge \
 	gimp \
 	inkscape \
@@ -52,12 +51,11 @@ sudo apt install -y \
 	xboxdrv \
 	screen \
 	curl \
-	xrandr \
+	x11-xserver-utils \
 	lolcat #This one is just fun. Test it out with something like "cat *.sh | lolcat"
 
 #dconf-editor is useful on a lot of systems, I only ever use it in elementary to customize pantheon a little bit though. If you don't know you need this, you probably don't.
-#software-properties-common lets you add PPA's on elementaryOS. If you're running elementary I definitely recommend this. You shouldn't need this on any other system.
-#sudo apt install -y dconf-editor software-properties-common
+#sudo apt install -y dconf-editor
 
 #this is only needed on a gnome system. I don't use gnome too much, but gnome-tweak-tool is a requirement when I do.
 #sudo apt install -y gnome-tweak-tool

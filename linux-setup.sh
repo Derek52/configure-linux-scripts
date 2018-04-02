@@ -4,13 +4,17 @@ if [ -z "$1" ]
 then
 	echo "Help info"
 
-elif [ "${1,,}" == "ubuntu" ] || [ "${1,,}" == "debian" ]
+elif [ "${1,,}" == "ubuntu" ]
 then
-	./ubuntu/configure-linux.sh
+	./ubuntu/configure-ubuntu.sh
+
+elif [ "{1,,}" == "debian" ]
+then
+	./debian/configure-debian.sh
 
 elif [ "${1,,}" == "fedora" ]
 then
-	echo "You are running Fedora"
+	./fedora/configure-fedora.sh
 
 elif [ "${1,,}" == "arch" ]
 then
