@@ -53,6 +53,12 @@ sudo apt install -y \
 	xrandr \
 	lolcat #This one is just fun. Test it out with something like "cat *.sh | lolcat"
 
+#dconf-editor is useful on a lot of systems, I only ever use it in elementary to customize pantheon a little bit though. If you don't know you need this, you probably don't.
+#software-properties-common lets you add PPA's on elementaryOS. If you're running elementary I definitely recommend this. You shouldn't need this on any other system.
+sudo apt install -y dconf-editor software-properties-common
+
+#this is only needed on a gnome system. I don't use gnome too much, but gnome-tweak-tool is a requirement when I do.
+sudo apt install -y gnome-tweak-tool
 
 #python, and some python utilities
 sudo apt install -y python3 python3-setuptools python3-dev

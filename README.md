@@ -16,3 +16,6 @@ It will then prompt you for a password, and you should be good to go from there.
 
 This script calls a couple other scripts. One is `configure-linux.sh`, which has sudo rights, and installs a ton of software.
 `linux-setup.sh` also calls `customize-home.sh` which does some non sudo stuff, like change wallpaper and adds a few directories to the home folder.
+
+`configure-linux.sh` calls a couple of scripts. The big one is `install-apt-packages.sh`.
+This script has mulitple `sudo apt install` lines to install different pieces of software. I commented explaing what each set of software is. Comment any lines you don't want and add whatever packages you need.

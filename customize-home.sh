@@ -22,6 +22,8 @@ cp ~/Downloads/*.png ~/Downloads/*.jpg ~/Downloads/*.jpeg ~/.wallpapers 2>/dev/n
 
 #this line will set the first image in your wallpaper folder as your background wallpaper.
 #you can change the '*' to the name of whatever file you specifically want.
+#this works perfectly in the cinnamon desktop, and on tiling window managers like i3.
+#I was super disappointed to find this doesn't work on Mate, KDE, Gnome, or Pantheon.
 feh --bg-fill ~/.wallpapers/*
 
 #you could also use one of these 2 commands to have it randomly pick a wallpaper.
