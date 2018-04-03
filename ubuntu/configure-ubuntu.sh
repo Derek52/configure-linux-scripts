@@ -3,7 +3,7 @@ sudo apt update
 sudo apt upgrade -y
 
 #installs all the programs in the install-apt-packages script. Edit that file to your liking.
-./ubuntu/install-apt-packages.sh
+sudo ./ubuntu/install-apt-packages.sh
 
 #installs some pip packages.
 ./ubuntu/install-pip-packages.sh

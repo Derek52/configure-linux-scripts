@@ -2,12 +2,12 @@
 sudo dnf upgrade -y
 
 #installs all the programs in the install-dnf-packages script. Edit that file to your liking.
-./fedora/install-dnf-packages.sh
+sudo /fedora/install-dnf-packages.sh
 
 #installs python3 and some pip packages.
 sudo dnf install -y python3 python3-pip #reinstalls python3 just in case it gets deleted from the other file.
 
-sudo pip3 install \
+pip3 install \
 	youtube-dl \
 	virtualenvwrapper \
 	flask \
