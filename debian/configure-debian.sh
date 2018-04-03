@@ -3,10 +3,10 @@ sudo apt update
 sudo apt upgrade -y
 
 #installs all the programs in the install-apt-packages script. Edit that file to your liking.
-./ubuntu/install-apt-packages.sh
+./debian/install-apt-packages.sh
 
 #installs python3 and some pip packages.
-./install-pip-packages.sh
+./debian/install-pip-packages.sh
 
 #this installs some requirements for atom-text-editor. They are placed here just incase I forget I need them and delete them from the other script
 sudo apt install -y nodejs npm
