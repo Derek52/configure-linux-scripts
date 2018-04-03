@@ -1,0 +1,21 @@
+"show line numbers
+set number 
+
+"automatically match indentation of the previous line, when making a new one.
+set autoindent
+
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+
+"turn backups off, your code should be saved by Git or some inferior version control system.
+set nobackup
+set nowb
+set noswapfile
+
+try
+	colorscheme red_on_brown
+catch
+endtry
+
+"set background=dark

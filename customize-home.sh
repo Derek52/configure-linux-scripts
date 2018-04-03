@@ -1,16 +1,41 @@
 #/bin/bash
 
+#This could just be in the linux-setup script, but I like smaller script files, so I broke this one off.
+
 #this creates some directories in the home folder. Your system probably already has a few of these, but they are
 #listed for the sake of completion.
-#You won't want some of these, delete them, and add whatever you need.
-#I was running this inside the linux-setup script, but it's easier to run this without sudo rights.
-mkdir -p ~/Art ~/Battles ~/Books ~/Dev ~/Documents ~/Downloads ~/Memes ~/Movies ~/Music ~/Pictures ~/Television ~/Videos
+#You won't want some of these. Delete them, and add whatever you need.
+mkdir -p ~/Art \
+	~/Battles \
+	~/Books \
+	~/Dev \
+	~/Documents \
+	~/Downloads \
+	~/Memes \
+	~/Movies \
+	~/Music \
+	~/Pictures \
+	~/Television \
+	~/Videos
 
 #this could have been a part of the previous command, but it's separated for readability. These are hidden folders
-mkdir -p ~/.wallpapers ~/.icons ~/.themes ~/.arduino ~/.os #.os is where I save linux ISO's when I download them.
+mkdir -p ~/.wallpapers \
+	~/.icons \
+	~/.themes \
+	~/.arduino \
+	~/.os #.os is where I save linux ISO's when I download them.
 
 #these are folders I never use, so I just delete them
 rm -rf ~/Templates ~/Public
+
+
+#creates a folder for my vim color schemes
+mkdir -p ~/.vim/colors
+#moves vimrc to the home directories, and renames it to the proper name ".vimrc"
+mv config/vimrc ~/.vimrc
+#moves vim color schemes to the appropriate destination
+mv config/vimColorSchemes/* ~/.vim/colors 
+
 
 #this moves a wallpaper I quickly made in gimp into your wallpaper folder, to avoid an error with the next line
 mv zMyCustomWallpaper.png ~/.wallpapers
