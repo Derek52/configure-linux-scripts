@@ -20,9 +20,8 @@ For example
 ```
 will call `fedora/configure-linux.sh`
 
+You can simply delete the folders for any OS you aren't using.
 
 `linux-setup.sh` also calls `customize-home.sh` which does some non sudo stuff, like change wallpaper and adds a few directories to the home folder.
-
-You can simply delete the folders for any OS you aren't using.
 
 This is still a work in progress. I intend to add scripts for other systems, and some more config files and some utility scripts I've written for various things.
