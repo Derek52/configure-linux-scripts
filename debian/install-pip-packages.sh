@@ -7,9 +7,9 @@ sudo apt install python3 python3-setuptools
 
 sudo easy_install3 pip
 
-sudo pip install --upgrade pip
+pip install --upgrade pip
 
-sudo pip install \
+pip install \
 	youtube-dl \
 	virtualenvwrapper \
 	flask \

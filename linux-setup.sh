@@ -18,7 +18,7 @@ then
 
 elif [ "${1,,}" == "arch" ]
 then
-	echo "You are running Arch"
+	./arch/configure-arch.sh
 
 elif [ "${1,,}" == "opensuse" ]
 then

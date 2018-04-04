@@ -7,6 +7,7 @@ sudo /fedora/install-dnf-packages.sh
 #installs python3 and some pip packages.
 sudo dnf install -y python3 python3-pip #reinstalls python3 just in case it gets deleted from the other file.
 
+#You probably don't need most of these. But virtualenv is useful, and I can't live without youtube-dl.
 pip3 install \
 	youtube-dl \
 	virtualenvwrapper \

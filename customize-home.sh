@@ -32,13 +32,13 @@ rm -rf ~/Templates ~/Public
 #creates a folder for my vim color schemes
 mkdir -p ~/.vim/colors
 #moves vimrc to the home directories, and renames it to the proper name ".vimrc"
-mv config/vimrc ~/.vimrc
+mv ./config/vimrc ~/.vimrc
 #moves vim color schemes to the appropriate destination
-mv config/vimColorSchemes/* ~/.vim/colors 
+mv ./config/vimColorSchemes/* ~/.vim/colors 
 
 
 #this moves a wallpaper I quickly made in gimp into your wallpaper folder, to avoid an error with the next line
-mv zMyCustomWallpaper.png ~/.wallpapers
+mv ./zCustomWallpaper.png ~/.wallpapers
 
 #if you download some wallpapers into your download directory before running this, it will go ahead
 #and copy all pngs and jpegs into your wallpaper directory.

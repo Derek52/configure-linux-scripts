@@ -5,8 +5,22 @@ sudo apt upgrade -y
 #installs all the programs in the install-apt-packages script. Edit that file to your liking.
 sudo  ./debian/install-apt-packages.sh
 
-#installs python3 and some pip packages.
-./debian/install-pip-packages.sh
+#installs these just incase they were accidentally removed from the install-apt-packages script
+sudo apt install python3 python3-setuptools
+
+#this installs pip and some pip packages. I can't live without youtube-dl. You probably don't need the other ones.
+
+sudo easy_install3 pip
+
+pip install --upgrade pip
+
+pip install \
+	youtube-dl \
+	virtualenvwrapper \
+	flask \
+	flask_sqlalchemy \
+	django \
+	mysqclient
 
 #this installs some requirements for atom-text-editor. They are placed here just incase I forget I need them and delete them from the other script
 sudo apt install -y nodejs npm
