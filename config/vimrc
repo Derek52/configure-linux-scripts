@@ -1,10 +1,32 @@
+
+"Setting up Vundle, to manage vim plugins. This was mostly copied from Vundle's github page.
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+"let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'udalov/kotlin-vim'
+
+"all plugins must be added before this line
+call vundle#end()
+filetype plugin indent on
+"done setting up vundle
+
+
+"Now we can start configuring VIM the way we like it.
 "show line numbers
 set number 
 
 "automatically match indentation of the previous line, when making a new one.
 set autoindent
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files (You want this!) I stole this from some github page. Idk how it works.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
@@ -18,4 +40,7 @@ try
 catch
 endtry
 
-"set background=dark
+"Sets vim to split to the right or below. Vim's defaults are just unnatural.
+set splitbelow
+set splitright
+

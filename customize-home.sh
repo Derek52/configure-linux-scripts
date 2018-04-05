@@ -23,6 +23,7 @@ mkdir -p ~/.wallpapers \
 	~/.icons \
 	~/.themes \
 	~/.arduino \
+	~/.vim/colors \
 	~/.os #.os is where I save linux ISO's when I download them.
 
 #these are folders I never use, so I just delete them
@@ -32,10 +33,13 @@ rm -rf ~/Templates ~/Public
 #creates a folder for my vim color schemes
 mkdir -p ~/.vim/colors
 #moves vimrc to the home directories, and renames it to the proper name ".vimrc"
-mv ./config/vimrc ~/.vimrc
+cp ./config/vimrc ~/.vimrc
 #moves vim color schemes to the appropriate destination
-mv ./config/vimColorSchemes/* ~/.vim/colors 
+cp ./config/vimColorSchemes/* ~/.vim/colors 
 
+#downloads Vundle, and installs our vim plugins.
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 #this moves a wallpaper I quickly made in gimp into your wallpaper folder, to avoid an error with the next line
 mv ./zCustomWallpaper.png ~/.wallpapers
@@ -56,3 +60,5 @@ feh --bg-fill ~/.wallpapers/*
 #feh --randomize --bg-fill ~/.wallpapers/*
 #feh --recursive --randomize --bg-fill ~/.wallpapers/*
 
+#moves my i3 gaps config file, to the appropriate location. This won't mess with your system if you aren't using i3, but, if you aren't using i3, go ahead and comment this line out.
+cp ./config/i3-gaps-config ~/.config/i3/config

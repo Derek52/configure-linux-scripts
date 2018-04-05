@@ -86,3 +86,15 @@ sudo apt install -y make cmake build-essential
 
 #requirements for compiling the R programming language. This script doesn't compile the R langauge. But, I compile R on all of my machines, so it was convient for me to put this stuff here.
 #sudo apt install -y libreadline-dev libcurl4-openssl-dev libpcre3-dev libbz2-dev liblzma-dev libx11-dev libblas-dev xorg-dev #gobjc++ gfortran fort77 curl build-essential # are also all required
+
+#dependencies to compile and install i3-gaps.
+#sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev dh-autoreconf
+
+#installs dependencies needed to compile qutebrowser
+#sudo apt install -y libglib2.0-0 libgl1 libfontconfig1 libx11-xcb1 libxi6 libxrender1 libdbus-1-3
+
+#dependencies to compile and install suckless terminal st
+#sudo apt install -y libx11-dev libxft-dev libxext-dev
+
+#dependencies for compiling polybar, which i prefer over i3's default status bar
+#sudo apt-get install python-xcbgen libxcb-ewmh-dev libxcb-icccm4-dev libxcb1-dev xcb-proto libxcb-util-dev libxcb-image0-dev libxcb-randr0-dev libxcb-xkb-dev libalsaplayer-dev wireless-tools libcurlpp-dev  libcairo2-dev
