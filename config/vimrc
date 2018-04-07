@@ -13,13 +13,20 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'udalov/kotlin-vim'
 
+Plugin 'tpope/vim-rails'
+
+Plugin 'othree/html5.vim'
+
+Plugin 'mattn/emmet-vim'
+
 "all plugins must be added before this line
 call vundle#end()
 filetype plugin indent on
 "done setting up vundle
 
 
-"Now we can start configuring VIM the way we like it.
+"These are simply config choices I like.
+
 "show line numbers
 set number 
 
@@ -44,3 +51,21 @@ endtry
 set splitbelow
 set splitright
 
+
+"Key Maps"
+"inserts a hash rocket. Useful for ruby devs
+imap <c-l> <space>=><space>
+"maps a ruby html tag, for .html.erb files. Useful for rails devs
+imap <c-a> <%=<space><space><space>%>
+
+"Mulipurpose tab key
+function! InsertTabWrapper()
+	let col = col('.') - 1
+	if !col || getline('.')[col - 1] !~ '\k'
+		return "\<tab>"
+	else
+		return "\<c-p>"
+	endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>

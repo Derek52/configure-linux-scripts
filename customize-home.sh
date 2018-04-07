@@ -60,5 +60,12 @@ feh --bg-fill ~/.wallpapers/*
 #feh --randomize --bg-fill ~/.wallpapers/*
 #feh --recursive --randomize --bg-fill ~/.wallpapers/*
 
+#changes docky icon from the default anchor, to tux the penguin. Copied this from the gentoo wiki
+wget -O /usr/share/icons/hicolor/scalable/apps/tux.svg http://upload.wikimedia.org/wikipedia/commons/b/b0/NewTux.svg
+mv /usr/share/icons/hicolor/128x128/apps/docky.svg /usr/share/icons/hicolor/128x128/apps/docky.svg.backup
+mv /usr/share/icons/hicolor/48x48/apps/docky.svg /usr/share/icons/hicolor/48x48/apps/docky.svg.backup
+ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/128x128/apps/docky.svg
+ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/48x48/apps/docky.svg 
+
 #moves my i3 gaps config file, to the appropriate location. This won't mess with your system if you aren't using i3, but, if you aren't using i3, go ahead and comment this line out.
 cp ./config/i3-gaps-config ~/.config/i3/config
