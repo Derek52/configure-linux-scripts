@@ -44,3 +44,12 @@ fi
 #obviously comment or delete this line if you didn't install atom.
 #running the command "apm list --installed --bare > atom-package-list.txt" will help you easily generate a file like this, on a system where you already have atom set up.
 apm install --packages-file atom-package-list.txt
+
+
+#changes docky icon from the default anchor, to tux the penguin. Copied this from the gentoo wiki
+#this needs sudo privileges, so I threw it at the end here. The script will ask for the password one last time, and then go ahead and just do this quick task
+wget -O /usr/share/icons/hicolor/scalable/apps/tux.svg http://upload.wikimedia.org/wikipedia/commons/b/b0/NewTux.svg
+sudo mv /usr/share/icons/hicolor/128x128/apps/docky.svg /usr/share/icons/hicolor/128x128/apps/docky.svg.backup
+sudo mv /usr/share/icons/hicolor/48x48/apps/docky.svg /usr/share/icons/hicolor/48x48/apps/docky.svg.backup
+sudo ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/128x128/apps/docky.svg
+sudo ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/48x48/apps/docky.svg 

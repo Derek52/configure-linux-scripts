@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #installs xorg so you can install a graphical window manager.
-sudo pacman -S --noconfrim xorg
+sudo pacman -S --noconfirm xorg
 #you could alternatively use wayland.
 #sudo pacman -S --noconfirm wayland
 

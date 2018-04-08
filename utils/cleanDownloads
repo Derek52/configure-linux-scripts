@@ -1,4 +1,0 @@
-#!/bin/bash
-#this is a script I use periodically to remove all zip files from my downloads folder.
-#you could add in other file types here pretty easily.
-rm ~/Downloads/*.zip

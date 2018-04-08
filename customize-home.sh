@@ -29,6 +29,12 @@ mkdir -p ~/.wallpapers \
 #these are folders I never use, so I just delete them
 rm -rf ~/Templates ~/Public
 
+#downloads some useful shell scripts I've written and adds them to my .bin folder.
+#to call these scripts you will have to navigate to that folder, or add ~/.bin to your path
+#this script doesn't do that, yet.
+git clone https://github.com/derek52/bash-scripts ~/bash-scripts
+mv ~/bash-scripts/scripts/* ~/.bin
+
 
 #creates a folder for my vim color schemes
 mkdir -p ~/.vim/colors
@@ -42,7 +48,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 #this moves a wallpaper I quickly made in gimp into your wallpaper folder, to avoid an error with the next line
-mv ./zCustomWallpaper.png ~/.wallpapers
+mv ./config/zCustomWallpaper.png ~/.wallpapers
 
 #if you download some wallpapers into your download directory before running this, it will go ahead
 #and copy all pngs and jpegs into your wallpaper directory.
@@ -60,12 +66,6 @@ feh --bg-fill ~/.wallpapers/*
 #feh --randomize --bg-fill ~/.wallpapers/*
 #feh --recursive --randomize --bg-fill ~/.wallpapers/*
 
-#changes docky icon from the default anchor, to tux the penguin. Copied this from the gentoo wiki
-wget -O /usr/share/icons/hicolor/scalable/apps/tux.svg http://upload.wikimedia.org/wikipedia/commons/b/b0/NewTux.svg
-mv /usr/share/icons/hicolor/128x128/apps/docky.svg /usr/share/icons/hicolor/128x128/apps/docky.svg.backup
-mv /usr/share/icons/hicolor/48x48/apps/docky.svg /usr/share/icons/hicolor/48x48/apps/docky.svg.backup
-ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/128x128/apps/docky.svg
-ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/48x48/apps/docky.svg 
 
 #moves my i3 gaps config file, to the appropriate location. This won't mess with your system if you aren't using i3, but, if you aren't using i3, go ahead and comment this line out.
 cp ./config/i3-gaps-config ~/.config/i3/config
