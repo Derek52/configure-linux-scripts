@@ -55,6 +55,9 @@ sudo apt install -y \
 	xrandr \
 	lolcat #This one is just fun. Test it out with something like "cat *.sh | lolcat"
 
+#installs ranger, a file manager, and w3m, a web browser. w3m is needed to display images in ranger. The rest of the programs are other packages that go with ranger
+sudo apt install -y ranger w3m w3m-img highlight atool caca-utils poppler-utils
+
 #dconf-editor is useful on a lot of systems, I only ever use it in elementary to customize pantheon a little bit though. If you don't know you need this, you probably don't.
 #software-properties-common lets you add PPA's on elementaryOS. If you're running elementary I definitely recommend this. You shouldn't need this on any other system.
 #sudo apt install -y dconf-editor software-properties-common

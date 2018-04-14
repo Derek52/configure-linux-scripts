@@ -16,5 +16,7 @@ sudo pip install \
 	flask_sqlalchemy \
 	django \
 
+#this requires python3.6/pip3.6 and ubuntu/debian are currently shipping 3.5.x. I'm not sure about fedora. So I just put this here by itself.
+sudo pip install git+https://github.com/LazoCoder/Pokemon-Terminal.git
 #Pacman doesn't clean out the folder where it keeps downloaded packages. It's smart to run this command to clean it out from time to time.
 sudo pacman -Sc --noconfirm

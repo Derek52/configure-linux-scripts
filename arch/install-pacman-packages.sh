@@ -6,8 +6,11 @@ sudo pacman -S --noconfirm xorg
 #sudo pacman -S --noconfirm wayland
 
 #Uncomment at least one of these to pick a desktop environment
+#sudo pacman -S --noconfirm i3-gaps
+#sudo pacman -S --noconfirm xfce4
 #sudo pacman -S --noconfirm budgie-desktop
-sudo pacman -S --noconfirm cinnamon
+#sudo pacman -S --noconfirm i3
+#sudo pacman -S --noconfirm cinnamon
 #sudo pacman -S --noconfirm deepin
 #sudo pacman -S --noconfirm enlightenment
 #sudo pacman -S --noconfirm gnome
@@ -18,7 +21,6 @@ sudo pacman -S --noconfirm cinnamon
 #sudo pacman -S --noconfirm lxqt
 #sudo pacman -S --noconfirm mate
 #sudo pacman -S --noconfirm sugar sugare-fructose
-#sudo pacman -S --noconfirm xfce4
 
 #you could also go for one of these tiling window managers
 #sudo pacman -S --noconfirm awesome
@@ -82,6 +84,9 @@ sudo pacman -S --noconfirm \
 	curl \
 	lolcat \
 	ranger
+
+#installs pulseaudio for sound
+sudo pacman -S --noconfirm pulseaudio
 
 #installs emacs. This pleases Stallman.
 #sudo pacman -S --noconfirm emacs

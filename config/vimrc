@@ -11,13 +11,23 @@ call vundle#begin()
 "let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
+"adds syntax highlighting for Kotlin
 Plugin 'udalov/kotlin-vim'
+
 
 Plugin 'tpope/vim-rails'
 
+
 Plugin 'othree/html5.vim'
 
+"adds emmet to vim. Super useful for writing html code
 Plugin 'mattn/emmet-vim'
+
+"adds a toggleable filetree. This is basically needed.
+Plugin 'scrooloose/nerdtree'
+
+"color previews
+Plugin 'gko/vim-coloresque'
 
 "all plugins must be added before this line
 call vundle#end()
@@ -43,7 +53,10 @@ set nowb
 set noswapfile
 
 try
-	colorscheme red_on_brown
+	"colorscheme dracula
+	"colorscheme plumber-dark
+	colorscheme monokai
+	"colorscheme sierra
 catch
 endtry
 
@@ -51,6 +64,18 @@ endtry
 set splitbelow
 set splitright
 
+"Ctrl+\ will open/close the filetree
+map <C-\> :NERDTreeToggle <CR>
+"automatically open the file tree, if you open vim without specifiying a file.
+"Meaning you cd into your desired directory, and then launch vim, by just typing "vim"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"alternatively just automatically open the file tree whenever vim is opened
+"autocmd vimenter * NERDTree
+
+"close vim if the filetree is the only window left open
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "Key Maps"
 "inserts a hash rocket. Useful for ruby devs
@@ -67,5 +92,6 @@ function! InsertTabWrapper()
 		return "\<c-p>"
 	endif
 endfunction
+
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
