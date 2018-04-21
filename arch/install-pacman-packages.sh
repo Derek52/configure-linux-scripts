@@ -82,11 +82,15 @@ sudo pacman -S --noconfirm \
 	git \
 	screen \
 	curl \
+	wget \
+	imagemagick \
 	lolcat \
 	ranger
 
 #installs pulseaudio for sound
 sudo pacman -S --noconfirm pulseaudio
 
+#installs various things required, and or are useful for rails development
+sudo pacman -S --noconfirm nodejs npm imagemagick patch base-devel libffi openssl readline curl git zlib libyaml sqlite libxm12 libxslt libgdm ncurses postgresql postgresql-libs
 #installs emacs. This pleases Stallman.
 #sudo pacman -S --noconfirm emacs
