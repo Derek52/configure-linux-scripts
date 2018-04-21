@@ -52,6 +52,7 @@ sudo apt install -y \
 	xboxdrv \
 	screen \
 	curl \
+	wget
 	xrandr \
 	lolcat #This one is just fun. Test it out with something like "cat *.sh | lolcat"
 
