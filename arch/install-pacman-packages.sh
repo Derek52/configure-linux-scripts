@@ -48,7 +48,7 @@ sudo pacman -S --noconfirm \
 	gcc-fortran \
 	python \
 	python-pip #I almost put the python stuff in it's own line for consistency sake. But it's fine here.
-		#also, I like arch, because python3 is just called python. 
+		#also, I like arch, because python3 is just called python.
 
 #some graphical applications
 sudo pacman -S --noconfirm \
@@ -89,6 +89,9 @@ sudo pacman -S --noconfirm \
 
 #installs pulseaudio for sound, and pavucontrol for volume/device control
 sudo pacman -S --noconfirm pulseaudio pavucontrol
+
+#installs 32bit compatibility libs for android development on a 64 bit system
+sudo pacman -S --noconfirm lib32-gcc-libs
 
 #installs various things required, and or are useful for rails development
 sudo pacman -S --noconfirm nodejs npm imagemagick patch base-devel libffi openssl readline curl git zlib libyaml sqlite libxm12 libxslt libgdm ncurses postgresql postgresql-libs
