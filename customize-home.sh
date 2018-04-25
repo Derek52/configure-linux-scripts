@@ -55,6 +55,11 @@ mv ./config/zCustomWallpaper.png ~/.wallpapers
 cp ~/Downloads/*.png ~/Downloads/*.jpg ~/Downloads/*.jpeg ~/.wallpapers 2>/dev/null
 #2>/dev/null suppresses the error cp would give, if there were no jpegs or pngs in downloads. It's a handy trick.
 
+#creates default config files for ranger file manager
+ranger --copy-config=all
+#overwrites one of the default config files for ranger
+cp ./config/ranger/rc.conf ~/.config/ranger/rc.conf
+
 #this line will set the first image in your wallpaper folder as your background wallpaper.
 #you can change the '*' to the name of whatever file you specifically want.
 #this works perfectly in the cinnamon desktop, and on tiling window managers like i3.

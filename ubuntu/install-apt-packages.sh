@@ -54,6 +54,8 @@ sudo apt install -y \
 	curl \
 	wget
 	xrandr \
+	ssh \
+	rsync
 	lolcat #This one is just fun. Test it out with something like "cat *.sh | lolcat"
 
 #installs ranger, a file manager, and w3m, a web browser. w3m is needed to display images in ranger. The rest of the programs are other packages that go with ranger

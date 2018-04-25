@@ -43,6 +43,8 @@ sudo pacman -S --noconfirm \
 	gcc \
 	clisp \
 	nodejs \
+	elixir \
+	erlang \
 	npm \
 	r \
 	gcc-fortran \
@@ -68,8 +70,7 @@ sudo pacman -S --noconfirm \
 	vlc \
 	tilda \
 	terminology \
-	terminator \
-	sakura
+	howl
 
 #my desired command line utilities
 sudo pacman -S --noconfirm \
@@ -85,15 +86,11 @@ sudo pacman -S --noconfirm \
 	wget \
 	imagemagick \
 	lolcat \
-	ranger
+	w3m \
+	mpv \
+	ranger \
+	rsync
 
 #installs pulseaudio for sound, and pavucontrol for volume/device control
 sudo pacman -S --noconfirm pulseaudio pavucontrol
 
-#installs 32bit compatibility libs for android development on a 64 bit system
-sudo pacman -S --noconfirm lib32-gcc-libs
-
-#installs various things required, and or are useful for rails development
-sudo pacman -S --noconfirm nodejs npm imagemagick patch base-devel libffi openssl readline curl git zlib libyaml sqlite libxm12 libxslt libgdm ncurses postgresql postgresql-libs
-#installs emacs. This pleases Stallman.
-#sudo pacman -S --noconfirm emacs

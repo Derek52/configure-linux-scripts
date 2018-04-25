@@ -8,7 +8,7 @@ elif [ "${1,,}" == "ubuntu" ]
 then
 	./ubuntu/configure-ubuntu.sh
 
-elif [ "{1,,}" == "debian" ]
+elif [ "${1,,}" == "debian" ]
 then
 	./debian/configure-debian.sh
 
@@ -22,11 +22,11 @@ then
 
 elif [ "${1,,}" == "opensuse" ]
 then
-	echo "You are running openSuse"
+	./solus/configure-solus.sh
 
 elif [ "${1,,}" == "solus" ]
 then
-	echo "You are running Solus"
+	
 
 else
 	echo -e "You misspelled your system, or it is not supported."
@@ -45,10 +45,13 @@ fi
 #running the command "apm list --installed --bare > atom-package-list.txt" will help you easily generate a file like this, on a system where you already have atom set up.
 apm install --packages-file atom-package-list.txt
 
+#make sure npm is at the latest possible version. Requires you to have installed nodejs.
+sudo npm install npm -g
 
-#changes docky icon from the default anchor, to tux the penguin. Copied this from the gentoo wiki
+#changes docky icon from the default anchor, to tux the penguin. I found this in the gentoo wiki, and it's a beautiful improvement imo
 #this needs sudo privileges, so I threw it at the end here. The script will ask for the password one last time, and then go ahead and just do this quick task
-wget -O /usr/share/icons/hicolor/scalable/apps/tux.svg http://upload.wikimedia.org/wikipedia/commons/b/b0/NewTux.svg
-sudo mv /usr/share/icons/hicolor/128x128/apps/docky.svg /usr/share/icons/hicolor/128x128/apps/docky.svg.backup sudo mv /usr/share/icons/hicolor/48x48/apps/docky.svg /usr/share/icons/hicolor/48x48/apps/docky.svg.backup
+sudo mv graphics/tux.svg /usr/share/icons/hicolor/scalable/apps/tux.svg
+sudo mv /usr/share/icons/hicolor/128x128/apps/docky.svg /usr/share/icons/hicolor/128x128/apps/docky.svg.backup
+sudo mv /usr/share/icons/hicolor/48x48/apps/docky.svg /usr/share/icons/hicolor/48x48/apps/docky.svg.backup
 sudo ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/128x128/apps/docky.svg
 sudo ln -s /usr/share/icons/hicolor/scalable/apps/tux.svg /usr/share/icons/hicolor/48x48/apps/docky.svg 

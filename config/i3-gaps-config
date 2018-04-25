@@ -29,17 +29,19 @@ set $term --no-startup-id st
 set $browser --no-startup-id firefox
 
 #Composite manager:
-exec --no-startup-id compton --xrender-sync-fence
+#exec --no-startup-id compton --xrender-sync-fence
 
 #puts my monitors in the correct positions
-exec xrandr --output HDMI-0 --right-of DVI-0
+#exec xrandr --output HDMI-0 --right-of DVI-0
+exec xrandr --output HDMI-1 --mode '1920x1080'
+exec /home/piccolo/.bin/changeWallpaper
 
 #unclutter hides the mouse after a brief period of time. I love this so much
 exec --no-startup-id unclutter
 
 #Now we can start really configuring i3/i3-gaps
 
-exec changeWallpaper
+#exec changeWallpaper
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -73,6 +75,8 @@ bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+bindsym $mod+Shift+s exec --no-startup-id echo "" | rofi -dmenu -p "youtube" | xargs -I{} st youtube-viewer --video-player=mpv {}
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -169,7 +173,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "0"
+set $ws10 "10"
 
 #create some workspace variables
 #set $ws0 "零"
@@ -221,22 +225,23 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Pressing left will grow the window’s width.
+        # Pressing right will shrink the window’s width.
+        # Pressing down will shrink the window’s height.
+        # Pressing up will grow the window’s height.
+	# These are inverted from the default settings, so they may trip you up.
 	# I changed the default to 1 px to let me make finer adjustments. You can also use the mouse to get super precise.
-        bindsym $left resize shrink width 1 px or 1 ppt
-        bindsym $down resize grow height 1 px or 1 ppt
-        bindsym $up resize shrink height 1 px or 1 ppt
-        bindsym $right resize grow width 1 px or 1  ppt
+        bindsym $left resize grow width 1 px or 1  ppt
+        bindsym $right resize shrink width 1 px or 1 ppt
+        bindsym $up resize grow height 1 px or 1 ppt
+        bindsym $down resize shrink height 1 px or 1 ppt
 
         # Here the arrow keys do the same thing, with the default of 10px as a size modifier.
 	# I set the arrow keys to 5px, (default was 10), but I don't really use these.
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left resize grow width 5 px or 5 ppt
+        bindsym Right resize shrink width 5 px or 5 ppt
+        bindsym Up resize grow height 5 px or 5 ppt
+        bindsym Down resize shrink height 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"

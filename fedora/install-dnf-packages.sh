@@ -36,6 +36,8 @@ sudo dnf install -y \
 	screen \
 	curl \
 	xrandr \
+	ssh \
+	rsync
 	#fun fact. FFMPEG isn't in the default fedora repo apparently. That kind of kills fedora for me.
 
 #installs emacs to please Richard Stallman
