@@ -22,11 +22,11 @@ then
 
 elif [ "${1,,}" == "opensuse" ]
 then
-	./solus/configure-solus.sh
+	"You are running openSuse"
 
 elif [ "${1,,}" == "solus" ]
 then
-	
+	./solus/configure-solus.sh
 
 else
 	echo -e "You misspelled your system, or it is not supported."
