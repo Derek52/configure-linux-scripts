@@ -11,14 +11,22 @@
 
 #set windows key as mod button
 set $mod Mod4
-
 #alternatively use Mod1 to set Alt as the mod key
 #set $mod Mod1
-#set up the gaps. This first line disables window borders which is a requirement
+
+#default gap sizes. Setting these here as variables makes them easier to change throughout this file.
+#desktop
+set $outerGap 15
+set $innerGap 10
+#laptop
+#set $outerGap 10
+#set $innerGap 5
+
+#turn on the gaps. This first line disables window borders which is a requirement
 #You can change the border size to any number of pixels from 0 to whatever(idk if there is a max.)
 for_window[class="^.*"] border pixel 3
-gaps outer 15
-gaps inner 10
+gaps outer $outerGap
+gaps inner $innerGap
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,24 +37,26 @@ set $term --no-startup-id st
 set $browser --no-startup-id firefox
 
 #Composite manager:
-#exec --no-startup-id compton --xrender-sync-fence
+exec --no-startup-id compton --xrender-sync-fence
 
-#puts my monitors in the correct positions
-#exec xrandr --output HDMI-0 --right-of DVI-0
-exec xrandr --output HDMI-1 --mode '1920x1080'
-exec /home/piccolo/.bin/changeWallpaper
+#puts my monitors in the correct positions on my desktop
+exec xrandr --output HDMI-1 --right-of DVI-I-1
+
+#this line does the same, but on my laptop
+#exec xrandr --output HDMI-1 --left-of LVDS-1
 
 #unclutter hides the mouse after a brief period of time. I love this so much
 exec --no-startup-id unclutter
 
-#Now we can start really configuring i3/i3-gaps
+#####Now we can start really configuring i3/i3-gaps#####
 
-#exec changeWallpaper
+#randomly set my wallpaper
+exec changeWallpaper
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-#i3's default is to have the mouse automatically focus windows when you hover the mosue over them.
+#i3's default is to have the mouse automatically focus windows when you hover the mouse over them.
 #That annoyed the shit out of me.
 focus_follows_mouse no
 
@@ -74,18 +84,19 @@ set $right semicolon
 bindsym $mod+Return exec $term
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
-bindsym $mod+Shift+s exec --no-startup-id echo "" | rofi -dmenu -p "youtube" | xargs -I{} st youtube-viewer --video-player=mpv {}
+#launch rofi
+bindsym $mod+space exec rofi -show run -show-icons -sidebar-mode -terminal st
+#use rofi to search youtube
+bindsym $mod+Shift+space exec --no-startup-id echo "" | rofi -dmenu -p "youtube" | xargs -I{} st youtube-viewer --video-player=mpv {}
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# start dmenu (a program launcher). The default program launcher. I use rofi instead.
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-bindsym $mod+s exec rofi -show run -show-icons -sidebar-mode -terminal st
 
 # change focus
 bindsym $mod+$left focus left
@@ -121,23 +132,34 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+backslash floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+backslash focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 
+
+#here I setup shortcuts to launched my most used software
+bindsym $mod+y exec android-studio
+bindsym $mod+Shift+y exec intellij
+
+bindsym $mod+u exec pycharm
+bindsym $mod+Shift+u exec inkscape
+
+bindsym $mod+t exec gimp
+bindsym $mod+Shift+t exec krita
+
 bindsym $mod+g exec $browser
 bindsym $mod+Shift+g exec $browser reddit.com
 
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots'
-bindsym Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/screenshots'
+bindsym Print exec --no-startup-id scrot '%m-%d.png' -e 'mv $f ~/Pictures/screenshots/'
+bindsym $mod+Print exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/screenshots/'
 #bindsym Print exec --no-startup-id scrot '%m-%d.png' -e 'mv $f ~/Pictures/screenshots'
 
 #sets gaps back to my default amounts
-bindsym $mod+question gaps outer current set 15; gaps inner current set 10
+bindsym $mod+question gaps outer current set $outerGap; gaps inner current set $innerGap
 #turn gaps off
 bindsym $mod+Shift+question gaps outer current set 0; gaps inner current set 0
 #change outer gap size
@@ -157,36 +179,47 @@ bindsym $mod+Shift+m gaps outer current set 140; gaps inner current set 50
 bindsym $mod+n gaps outer current set 5; gaps inner current set 5; 
 
 bindsym $mod+Home exec changeWallpaper
-bindsym $mod+Shift+Home exec changeWallpaper all
+bindsym $mod+Shift+Home exec --no-startup-id echo "" | rofi -dmenu -p "wallpaper" | xargs -I{} changeWallpaper {}
 
 # focus the child container
 #bindsym $mod+d focus child
 
 
 #create some workspace variables
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+#set $ws1 "1"
+#set $ws2 "2"
+#set $ws3 "3"
+#set $ws4 "4"
+#set $ws5 "5"
+#set $ws6 "6"
+#set $ws7 "7"
+#set $ws8 "8"
+#set $ws9 "9"
+#set $ws10 "10"
 
 #create some workspace variables
 #set $ws0 "零"
-#set $ws1 "一"
-#set $ws2 "二"
-#set $ws3 "三"
-#set $ws4 "四"
-#set $ws5 "五"
-#set $ws6 "六"
-#set $ws7 "七"
-#set $ws8 "八"
-#set $ws9 "九"
-#set $ws10 "十"
+set $ws1 "1:一"
+set $ws2 "2:二"
+set $ws3 "3:三"
+set $ws4 "4:四"
+set $ws5 "5:五"
+set $ws6 "6:六"
+set $ws7 "7:七"
+set $ws8 "8:八"
+set $ws9 "9:九"
+set $ws10 "10:十"
+
+workspace "1:一" output DVI-I-1
+workspace "2:二" output DVI-I-1
+workspace "3:三" output DVI-I-1
+workspace "4:四" output DVI-I-1
+workspace "5:五" output DVI-I-1
+workspace "6:六" output HDMI-1
+workspace "7:七" output HDMI-1
+workspace "8:八" output HDMI-1
+workspace "9:九" output HDMI-1
+workspace "10:十" output HDMI-1
 
 # switch to workspace
 #bindsym $mod+grave workspace $ws0
@@ -266,4 +299,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         tray_output primary
+	strip_workspace_numbers yes
 }

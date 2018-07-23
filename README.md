@@ -30,4 +30,6 @@ ubuntu/install-apt-packages.sh
 
 installs all of the packages I put in that list. You will want to edit that file, to list your desired packages, and delete the ones I listed, that you don't need. I did comment what most of the packages do though, there may be something you want and don't even know about.
 
-`linux-setup.sh` also calls `customize-home.sh` which does some non sudo stuff, like change wallpaper and adds a few directories to the home folder.
+`linux-setup.sh` also calls `customize-home.sh` which does some non sudo stuff, like change wallpaper and adds a few directories to the home folder. It also places config files into their correct locations, for certain programs I use, like vim, ranger, and i3. I've got more config stuff I need to add.
+
+Finally, the script clones my Trezo-Bash-Scripts repo. It's just a collection of some scripts I get a good little bit of utility out of, some are more useful than others. You can look at the repo by itself here, https://gitlab.com/Derek52/Trezo-Bash-Scripts.
