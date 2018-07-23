@@ -1,4 +1,4 @@
-# configure-linux-scripts
+#Linux-Bootstrap-Scripts
 
 This is a set of scripts designed to automate the process of installing your desired software, and making a few customization tweaks.
 
