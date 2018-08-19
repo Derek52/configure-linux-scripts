@@ -49,6 +49,7 @@ sudo pacman -S --no-confirm xorg \
 	pulseaudio pavucontrol \
 	gvfs-mtp mtpfs \
 	avr-gcc avrdude avr-libc \
-	opendesktop-fonts
+	opendesktop-fonts \
+	postgresql-libs #needed to install pg gem for rails
 
 sudo systemctl enable sddm.service
