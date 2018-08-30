@@ -8,7 +8,7 @@ elif [ "${1,,}" == "ubuntu" ]
 then
 	./ubuntu/configure-ubuntu.sh
 
-elif [ "${1,,}" == "ubuntu-sever" ]
+elif [ "${1,,}" == "ubuntu-server" ]
 then
 	./ubuntu-headless/install-apt-server-packages.sh
 
