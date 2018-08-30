@@ -8,6 +8,10 @@ elif [ "${1,,}" == "ubuntu" ]
 then
 	./ubuntu/configure-ubuntu.sh
 
+elif [ "${1,,}" == "ubuntu-sever" ]
+then
+	./ubuntu-headless/install-apt-server-packages.sh
+
 elif [ "${1,,}" == "debian" ]
 then
 	./debian/configure-debian.sh
