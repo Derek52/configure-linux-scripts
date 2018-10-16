@@ -50,6 +50,7 @@ sudo pacman -S --no-confirm xorg \
 	gvfs-mtp mtpfs \
 	avr-gcc avrdude avr-libc \
 	opendesktop-fonts \
+	scons libxcursor libxinerama libxi libxrandr mesa glu alsa-lib pulseaudio freetype2
 	postgresql-libs #needed to install pg gem for rails
 
 sudo systemctl enable sddm.service

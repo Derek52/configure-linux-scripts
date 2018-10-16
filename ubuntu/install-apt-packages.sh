@@ -58,6 +58,11 @@ sudo apt install -y \
 	rsync
 	lolcat #This one is just fun. Test it out with something like "cat *.sh | lolcat"
 
+#this is a set of dependencies for compiling the godot engine from source.
+sudo apt install -y build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \
+    libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \
+    libxi-dev libxrandr-dev
+
 #installs ranger, a file manager, and w3m, a web browser. w3m is needed to display images in ranger. The rest of the programs are other packages that go with ranger
 sudo apt install -y ranger w3m w3m-img highlight atool caca-utils poppler-utils
 

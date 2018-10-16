@@ -4,7 +4,7 @@ if [ -z "$1" ]
 then
 	echo "Help info"
 
-elif [ "${1,,}" == "ubuntu" ]
+elif [ "${1,,}" == "ubuntu" ] || [ "${1,,}" == "elementary" ]
 then
 	./ubuntu/configure-ubuntu.sh
 

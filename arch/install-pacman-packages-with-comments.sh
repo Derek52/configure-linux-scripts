@@ -91,6 +91,9 @@ sudo pacman -S --noconfirm \
 	ranger \
 	rsync
 
+#dependencies for compiling godot engine from source
+sudo pacman -S --noconfirm scons libxcursor libxinerama libxi libxrandr mesa glu alsa-lib pulseaudio freetype2
+
 #installs pulseaudio for sound, and pavucontrol for volume/device control
 sudo pacman -S --noconfirm pulseaudio pavucontrol
 
