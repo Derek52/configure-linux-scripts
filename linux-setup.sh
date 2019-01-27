@@ -8,9 +8,13 @@ elif [ "${1,,}" == "ubuntu" ] || [ "${1,,}" == "elementary" ]
 then
 	./ubuntu/configure-ubuntu.sh
 
-elif [ "${1,,}" == "ubuntu-server" ]
+elif [ "${1,,}" == "ubuntu-rails" ]
 then
-	./ubuntu-headless/install-apt-server-packages.sh
+	./ubuntu-headless/setupRailsServer.sh
+
+elif [ "${1,,}" == "ubuntu-tiny" ]
+then
+	./ubuntu-headless/setupPythonServer.sh
 
 elif [ "${1,,}" == "debian" ]
 then
