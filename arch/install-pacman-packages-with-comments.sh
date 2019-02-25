@@ -103,5 +103,8 @@ sudo pacman -S --noconfirm gvfs-mtp mtpfs
 #needed for using the terminal to verify/flash arduino code onto arduino boards
 sudo pacman -S --noconfirm avr-gcc avrdude avr-libc
 
+#needed for my php webdev setup.
+sudo pacman -S --noconfirm php php-pgsql
+
 #installs fonts that support chinese characters. I use chinese numbers as my workspace names
 sudo pacman -S --noconfirm opendesktop-fonts

@@ -10,7 +10,10 @@ sudo apt upgrade -y
 
 #This file installs a bunch of stuff to setup an Ubuntu server for hosting a ruby on rails web app.
 
-sudo apt-get install -y build-essential dirmngr gnupg ruby ruby-dev zlib1g-dev libruby libssl-dev libpcre3-dev libcurl4-openssl-dev rake ruby-rack
+#my preferred ruby manager. I used to use rvm. That was a mistake. Rbenv > rvm
+sudo apt install -y rbenv
+
+sudo apt install -y build-essential dirmngr gnupg ruby ruby-dev zlib1g-dev libruby libssl-dev libpcre3-dev libcurl4-openssl-dev rake ruby-rack
 
 sudo apt install -y \
 	gcc-multilib \
