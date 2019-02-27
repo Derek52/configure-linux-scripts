@@ -33,7 +33,7 @@ rm -rf ~/Templates ~/Public
 #downloads some useful shell scripts I've written and adds them to my .bin folder.
 #to call these scripts you will have to navigate to that folder, or add ~/.bin to your path
 #this script doesn't do that, yet.
-git clone https://gitlab.com:Derek52/Trezo-Bash-Scripts ~/bash-scripts
+git clone https://gitlab.com/Derek52/Trezo-Bash-Scripts ~/bash-scripts
 mv ~/bash-scripts/scripts/* ~/.bin
 
 
