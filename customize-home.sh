@@ -76,3 +76,8 @@ feh --bg-fill ~/.wallpapers/*
 
 #moves my i3 gaps config file, to the appropriate location. This won't mess with your system if you aren't using i3, but, if you aren't using i3, go ahead and comment this line out.
 cp ./config/i3-gaps-config ~/.config/i3/config
+
+#Installs rbenv to simplify Ruby development. If you aren't a ruby dev, delete tthese lines.
+#If you are a ruby dev unfamiliar with Rbenv, read here, https://github.com/rbenv/rbenv
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'eval "$(~/.rbenv/bin/rbenv init - bash)"' >> ~/.bash_profile
