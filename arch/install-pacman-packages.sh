@@ -14,7 +14,6 @@ sudo pacman -S --no-confirm xorg \
 	python \
 	python-pip \
 	docky \
-	atom \
 	firefox \
 	chromium \
 	deluge \

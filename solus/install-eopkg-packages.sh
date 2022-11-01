@@ -10,7 +10,6 @@ sudo eopkg it -y \
   python3 python3-devel
 
 sudo eopkg it -y \
-	atom \
 	firefox \
 	deluge \
 	gimp \
