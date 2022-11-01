@@ -47,6 +47,7 @@ fi
 #just makes things better.
 
 #make sure npm is at the latest possible version. Requires you to have installed nodejs.
+
 sudo npm install npm -g
 
 #changes docky icon from the default anchor, to tux the penguin. I found this in the gentoo wiki, and it's a beautiful improvement imo
